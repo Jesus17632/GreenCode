@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'Views/welcome_view.dart'; 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import '../services/greenbot_service.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env"); // ← Carga la key
   runApp(const MyApp());
 }
 
